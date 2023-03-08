@@ -1,0 +1,19 @@
+#include<stdio.h> //standard input output header file
+int fact(int n); //initializing the factorial function
+int main()
+{
+    int n ,a; //initializing  n ,a
+    printf("Enter the number\n"); //prints the statement 
+    scanf("%d",&n); //scans the data entered
+    printf("Factorial of %d is %d",n,fact(n)); //prints the statement
+    return 0;
+}
+int fact(int n)
+{
+    if(n==0) //checks the condition 
+    return 1;
+    else if(n==1) //checks the condition
+    return 1;
+    else
+    return n*fact(n-1); //returns the value 
+}
