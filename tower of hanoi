@@ -1,0 +1,23 @@
+//Program to implement towers of Hanoi using recursion
+#include<stdio.h> //standard input output header file
+void towers(int,char,char,char); //initializing the function towers
+int main()
+{
+    int num; //initializing the value num
+    printf("Enter the no of disks\n"); //prints the statement
+    scanf("%d",&num); //scans the input data
+    printf("The sequence of moves involved\n"); //prints the statement
+    towers(num,'A','C','B'); //calling the function towers
+    return 0;
+}
+void towers(int num,char frompeg,char topeg,char auxpeg)
+{
+    if(num==1)  //checks the condition
+    {
+        printf("Move disk 1 from peg %c to peg %c\n",frompeg,topeg); //prints the statement//
+        return;
+    }
+    towers(num-1,frompeg,auxpeg,topeg); //calling the function towers
+    printf("Move disk %d from peg %c to peg %c\n",num,frompeg,topeg); //prints the statement
+    towers(num-1,auxpeg,topeg,frompeg); //calling the function towers
+}
