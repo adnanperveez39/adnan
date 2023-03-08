@@ -1,0 +1,35 @@
+//Program to implement binary search using recursion 
+#include<stdio.h> //standard input output header file
+int binary_search(int arr[],int x,int low,int high) //initializing binary_search//
+{
+    if(high>=low) //checks the condition
+    {
+        int mid=(low+high)/2;
+        if(arr[mid]=x)  //checks the condition 
+        return mid;
+        else if(arr[mid]>x)  //checks the condition 
+        return binary_search(arr,x,low,mid-1); //returns the value
+        else 
+        return binary_search(arr,x,mid+1,high); //returns the value 
+    }
+    return -1;
+}
+int main()
+{
+    int i,x,n;  //initializing I,x,n
+    printf("Enter the no of elements in array\n"); //prints the statement
+    scanf("%d",&n); //stores the value 
+    int arr[n];  //initializing the arr[n]
+    printf("Enter the array elements in ascending order\n");  //prints the statement//
+    for(i=0;i<n;i++) //checks the for loop condition and enters the loop 
+    {
+        scanf("%d",&arr[i]); //scans the values 
+    }
+    printf("Enter the element to search:"); //prints the statement
+    scanf("%d",&x); //initializing the memory location
+    int result=binary_search(arr,x,0,n-1);
+    if(result==-1)
+    printf("Not found");
+    else
+    printf("Element found at %d",result+1); //prints the result
+}
